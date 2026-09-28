@@ -1,0 +1,27 @@
+{
+  "name": "legal-matter-event-recovery",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.6"
+  },
+  "scripts": {
+    "dev": "node --env-file=.env --import tsx --watch src/legal_event_server.ts",
+    "start": "node --env-file=.env --import tsx src/legal_event_server.ts",
+    "setup": "node --env-file=.env --import tsx src/setup_delivery.ts",
+    "recover": "node --env-file=.env --import tsx src/inspect_and_redrive.ts",
+    "test": "node --import tsx --test test/deadline_followup.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.13.10",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}
